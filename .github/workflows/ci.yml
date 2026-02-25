@@ -1,0 +1,13 @@
+name: CI  # Name your workflow "CI" for Continuous Integration
+
+on: [push, pull_request]  # Runs when you push code or open a pull request
+
+jobs:
+  test:
+    runs-on: ubuntu-latest  # Free virtual machine to run on
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4  # Grabs your repo files
+
+      - name: Run a test
+        run: echo "All good! Workflow passes."  # Simple step that always succeeds
